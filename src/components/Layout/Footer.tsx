@@ -58,24 +58,28 @@ export default function Footer() {
         <div className="flex flex-row gap-3 justify-center">
           <Image
             width={48}
+            height={60}
             src="https://uk.webuy.com/footer-payment-logos/apple-pay.svg"
             alt="apple"
-          ></Image>
+          />
           <Image
             width={48}
-            src="	https://uk.webuy.com/footer-payment-logos/amex.svg"
+            height={60}
+            src="https://uk.webuy.com/footer-payment-logos/amex.svg"
             alt="amex"
-          ></Image>
+          />
           <Image
             width={48}
+            height={60}
             src="https://uk.webuy.com/footer-payment-logos/visa.svg"
             alt="visa"
-          ></Image>
+          />
           <Image
             width={48}
+            height={60}
             src="https://uk.webuy.com/footer-payment-logos/mastercard.svg"
             alt="mastercard"
-          ></Image>
+          />
         </div>
       </div>
       <div className="flex justify-center items-center flex-col gap-4 mb-10 border-t-amber-300">
@@ -85,10 +89,14 @@ export default function Footer() {
         </p>
         <div className="flex flex-row gap-3">
           <Image
+            width={48}
+            height={60}
             alt="apple"
             src="https://uk.webuy.com/Image/mobile-app-buttons/apple-store.svg"
           />
           <Image
+            width={48}
+            height={60}
             alt="google-play"
             src="https://uk.webuy.com/Image/mobile-app-buttons/google-play.svg"
           />
