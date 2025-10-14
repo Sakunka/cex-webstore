@@ -25,8 +25,6 @@ interface ItemProps {
 export default function Item({ item, type }: ItemProps) {
   const router = useRouter();
 
-  console.log(item);
-
   const handleFavouriteClick = async (e: React.MouseEvent) => {
     e.stopPropagation();
     try {

@@ -48,10 +48,6 @@ export default function EditUser({ user, onClose }: EditModalProps) {
   async function uploadChanges(data: EditFormData) {
     setIsLoading(true);
     setError(null);
-
-    console.log("User ID:", user?._id);
-    console.log("Sending to:", `/api/update/${user?._id}`);
-
     try {
       const response = await fetch(`/api/auth/update/${user?._id}`, {
         method: "PATCH",
@@ -61,8 +57,6 @@ export default function EditUser({ user, onClose }: EditModalProps) {
         },
         body: JSON.stringify(data),
       });
-
-      console.log("Response:", response, response.status);
 
       if (!response.ok) {
         throw new Error("Failed to update user");

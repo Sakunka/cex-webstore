@@ -28,7 +28,6 @@ export function useSearch() {
         } catch (err) {
           if (err.name !== "AbortError") {
             setError(err.message);
-            console.error("Search error:", err);
           }
         } finally {
           setLoading(false);

@@ -33,8 +33,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    console.log("User", user);
-
     if (!user?.isActive) {
       return NextResponse.json(
         { message: "This account was deactivated" },

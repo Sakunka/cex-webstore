@@ -12,8 +12,6 @@ export async function PATCH(
 
     const currentUser = await authenticate(request);
 
-    console.log(currentUser);
-
     const { id } = await params;
 
     if (currentUser._id.toString() !== id) {

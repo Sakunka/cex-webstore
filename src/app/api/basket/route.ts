@@ -73,8 +73,6 @@ export async function POST(request: NextRequest) {
       id: updatedItem._id,
     });
   } catch (error: any) {
-    console.error("Basket API Error:", error);
-
     if (error.message === "Authentication failed") {
       return NextResponse.json({ message: "Token not found" }, { status: 401 });
     }

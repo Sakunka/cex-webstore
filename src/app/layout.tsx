@@ -39,7 +39,6 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("http://192.168.1.138:3000/"),
   alternates: {
     canonical: "/",
   },
@@ -57,14 +56,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "http://192.168.1.138:3000/",
+    url: "https://cex-webstore.vercel.app/",
     title: "CEX Webstore - Buy & Sell Games, Phones & Computing",
     description:
       "Shop the latest games, smartphones, and computing equipment at unbeatable prices. Buy, sell, and trade with confidence.",
     siteName: "CEX Webstore",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/metatags/Logo/png",
         width: 1200,
         height: 630,
         alt: "CEX Webstore - Games, Phones & Computing",
@@ -76,8 +75,7 @@ export const metadata: Metadata = {
     title: "CEX Webstore - Buy & Sell Games, Phones & Computing",
     description:
       "Shop the latest games, smartphones, and computing equipment at unbeatable prices.",
-    images: ["/twitter-image.jpg"],
-    creator: "@cexwebstore",
+    images: ["/metatags/Logo/png"],
   },
   verification: {
     google: "your-google-verification-code",

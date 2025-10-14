@@ -9,8 +9,6 @@ import { deleteBasketItem } from "@/lib/api/deleteBasketItem";
 export default function Basket() {
   const { items, isLoading, error, refetch } = useBasketItems();
 
-  console.log(items);
-
   async function handleDelete(id: string) {
     if (window.confirm("Are you sure you want to delete this item?")) {
       try {

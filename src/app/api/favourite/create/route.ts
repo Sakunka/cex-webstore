@@ -36,8 +36,6 @@ export async function POST(request: NextRequest) {
 
     const { _id, itemType } = requestBody;
 
-    console.log(_id, itemType);
-
     if (!_id || !itemType) {
       return NextResponse.json(
         { message: "itemId and itemType are required" },

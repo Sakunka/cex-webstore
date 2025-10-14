@@ -80,7 +80,6 @@ export async function PATCH(
 
     return response;
   } catch (error: any) {
-    console.error("Cancel account error:", error);
     return NextResponse.json(
       { success: false, message: "Internal Server Error" },
       { status: 500 }

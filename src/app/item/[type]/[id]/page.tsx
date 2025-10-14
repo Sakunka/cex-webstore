@@ -34,7 +34,6 @@ export default function ItemPage() {
   if (loading) return <SkeletonItem />;
   if (isError) return <div>Error: {error?.message}</div>;
   if (!item) return <div>Item is currently not available</div>;
-  console.log(item);
   return (
     <>
       <div className="flex flex-col w-full md:flex-row py-10 md:mx-auto md:max-w-7xl">

@@ -137,7 +137,6 @@ export function createGenericController(Model: any, entityName = "item") {
           { status: 201 }
         );
       } catch (error) {
-        console.error("Create error:", error);
         return NextResponse.json(
           { message: `Error creating ${entityName}`, error: error.message },
           { status: 400 }
