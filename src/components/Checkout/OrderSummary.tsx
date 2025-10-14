@@ -40,7 +40,7 @@ export default function OrderSummary({
         Confirm & Pay
       </button>
       <span className="text-[12px] text-center mt-6">
-        By placing your order, you agree to CeX's Terms & Conditions.
+        By placing your order, you agree to CeXs Terms & Conditions.
       </span>
     </div>
   );
