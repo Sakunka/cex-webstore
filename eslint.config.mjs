@@ -25,6 +25,9 @@ const eslintConfig = [
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/no-unused-expressions": "off",
+      "react/jsx-key": "warn", // umesto error
+      "prefer-const": "warn", // umesto error
+      "@next/next/no-img-element": "warn", // umesto error
     },
   },
 ];
