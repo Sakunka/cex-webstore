@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
@@ -55,26 +56,26 @@ export default function Footer() {
       <div className="flex flex-col *:border-t-sky-200 py-8 gap-3">
         <p className="flex justify-center">Payment doable with: </p>
         <div className="flex flex-row gap-3 justify-center">
-          <img
+          <Image
             width={48}
             src="https://uk.webuy.com/footer-payment-logos/apple-pay.svg"
             alt="apple"
-          ></img>
-          <img
+          ></Image>
+          <Image
             width={48}
             src="	https://uk.webuy.com/footer-payment-logos/amex.svg"
             alt="amex"
-          ></img>
-          <img
+          ></Image>
+          <Image
             width={48}
             src="https://uk.webuy.com/footer-payment-logos/visa.svg"
             alt="visa"
-          ></img>
-          <img
+          ></Image>
+          <Image
             width={48}
             src="https://uk.webuy.com/footer-payment-logos/mastercard.svg"
             alt="mastercard"
-          ></img>
+          ></Image>
         </div>
       </div>
       <div className="flex justify-center items-center flex-col gap-4 mb-10 border-t-amber-300">
@@ -83,8 +84,14 @@ export default function Footer() {
           acknowledged. E&OE.
         </p>
         <div className="flex flex-row gap-3">
-          <img src="https://uk.webuy.com/img/mobile-app-buttons/apple-store.svg" />
-          <img src="https://uk.webuy.com/img/mobile-app-buttons/google-play.svg" />
+          <Image
+            alt="apple"
+            src="https://uk.webuy.com/Image/mobile-app-buttons/apple-store.svg"
+          />
+          <Image
+            alt="google-play"
+            src="https://uk.webuy.com/Image/mobile-app-buttons/google-play.svg"
+          />
         </div>
       </div>
     </footer>

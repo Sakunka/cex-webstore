@@ -35,7 +35,7 @@ export default function Basic() {
   return (
     <div className="flex flex-col gap-8">
       <h2 className="text-2xl font-bold text-center">
-        CeX is the gadget lover's dream franchise that bress unrivalled returns
+        CeX is the gadget lovers dream franchise that bress unrivalled returns
       </h2>
       <div className="flex flex-row gap-4">
         {franchises.map((item, index) => (

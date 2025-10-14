@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 type SetOpen = {
-  setOpen: Function;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export default function SideMenu({ setOpen }: SetOpen) {

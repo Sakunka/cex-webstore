@@ -16,6 +16,13 @@ export default function ItemPage() {
   const { id, type } = useParams();
   const [show, setShow] = useState<boolean>(false);
 
+  const {
+    data: item,
+    isLoading: loading,
+    isError,
+    error,
+  } = useGetItem(type, id);
+
   function showDescription() {
     setShow((prev) => !prev);
   }
@@ -23,13 +30,6 @@ export default function ItemPage() {
   if (!type || !id || typeof type !== "string" || typeof id !== "string") {
     return <div>Invalid parameters</div>;
   }
-
-  const {
-    data: item,
-    isLoading: loading,
-    isError,
-    error,
-  } = useGetItem(type, id);
 
   if (loading) return <SkeletonItem />;
   if (isError) return <div>Error: {error?.message}</div>;

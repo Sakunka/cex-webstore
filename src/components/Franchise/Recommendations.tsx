@@ -24,8 +24,8 @@ export default function Recommendations() {
             key={index}
             className="flex flex-col gap-5 justify-between rounded-3xl bg-white border-1 border-gray-200 w-full md:w-1/3 p-4 min-w-[280px]"
           >
-            <p className="text-[15px]">"{item.text}"</p>
-            <p className="font-bold">"{item.name}"</p>
+            <p className="text-[15px]">{item.text}</p>
+            <p className="font-bold">{item.name}</p>
           </div>
         ))}
       </div>
