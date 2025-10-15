@@ -3,7 +3,11 @@ import "./globals.css";
 import { Providers } from "./providers";
 import Footer from "@/components/Layout/Footer";
 import ToastProvider from "@/components/ui/ToastContainer";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
+
+export const viewport: Viewport = {
+  colorScheme: "light",
+};
 
 export const metadata: Metadata = {
   title:
@@ -34,6 +38,7 @@ export const metadata: Metadata = {
   authors: [{ name: "CEX Webstore" }],
   creator: "CEX Webstore",
   publisher: "CEX Webstore",
+  colorScheme: "light only",
   formatDetection: {
     email: false,
     address: false,
