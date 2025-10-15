@@ -47,7 +47,7 @@ export default function OrderSummary({
       </button>
 
       <span className="text-xs md:text-sm text-center mt-4 md:mt-6 opacity-90 leading-relaxed">
-        By placing your order, you agree to CeX's Terms & Conditions.
+        By placing your order, you agree to CeXs Terms & Conditions.
       </span>
     </div>
   );
