@@ -7,7 +7,7 @@ import DetailsUp from "@/components/Item/DetailsUp";
 import DetailsDown from "@/components/Item/DetailsDown";
 import useGetItem from "@/hooks/useGetItem";
 import { useParams } from "next/navigation";
-import Image from "@/components/Item/Image";
+import ItemImage from "@/components/Item/ItemImage";
 import SkeletonItem from "@/components/Item/SkeletonItem";
 import { AnimatePresence } from "motion/react";
 import dynamic from "next/dynamic";
@@ -41,7 +41,7 @@ export default function ItemPage() {
   return (
     <>
       <div className="flex flex-col w-full md:flex-row py-10 md:mx-auto md:max-w-7xl">
-        <Image type={type} item={item} />
+        <ItemImage type={type} item={item} />
         <div className="w-full md:w-1/2 flex flex-col gap-6">
           <div className="flex flex-col gap-4">
             <DetailsUp item={item} />

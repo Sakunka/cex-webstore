@@ -1,6 +1,7 @@
 import React from "react";
+import Image from "next/image";
 
-export default function Image({ type, item }) {
+export default function ItemImage({ type, item }) {
   return (
     <div className="w-1/2 pr-8 flex justify-center">
       <Image
