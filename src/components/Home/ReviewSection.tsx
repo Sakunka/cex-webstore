@@ -3,7 +3,7 @@ export default function ReviewSection() {
     <div className="w-full md:w-1/4 h-auto relative rounded-2xl border-4">
       <img
         className="w-full h-full object-cover"
-        src="https://uk.static.webuy.com/images/banners/uk-cex-trustpilot-top-rhs-main-page.png"
+        src="/images/trustpilot.png"
         width="300"
         height="200"
         alt="Trustpilot reviews - Rated GREAT with 475K+ reviews"

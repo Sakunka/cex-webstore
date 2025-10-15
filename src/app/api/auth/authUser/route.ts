@@ -14,14 +14,9 @@ export async function GET(request: NextRequest) {
       shippingInfo: user.shippingInfo,
     });
   } catch (error: any) {
-    const response = NextResponse.json(
-      {
-        message: "Error",
-      },
-      {
-        status: error.message === "No token provided" ? 401 : 403,
-      }
-    );
+    const response = NextResponse.json({
+      message: "Error",
+    });
 
     if (error.message !== "No token provided") {
       response.cookies.delete("token");

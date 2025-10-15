@@ -1,11 +1,13 @@
 "use client";
 
-import FavouriteTab from "@/components/User/FavouriteTab";
-import Purchase from "@/components/Purchase/Purchase";
-import UserInfo from "@/components/User/UserInfo";
 import UserRightSide from "@/components/User/UserRightSide";
 import UserTab from "@/components/User/UserTab";
 import { useState } from "react";
+import dynamic from "next/dynamic";
+
+const FavouriteTab = dynamic(() => import("@/components/User/FavouriteTab"));
+const Purchase = dynamic(() => import("@/components/Purchase/Purchase"));
+const UserInfo = dynamic(() => import("@/components/User/UserInfo"));
 
 type TabType = "profile" | "favourite" | "purchase";
 

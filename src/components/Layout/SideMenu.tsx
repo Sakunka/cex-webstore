@@ -43,10 +43,30 @@ export default function SideMenu({ setOpen }: SetOpen) {
 
         <div className="py-6 border-b border-gray-300">
           <ul className="flex flex-col gap-3">
-            <li onClick={() => handleRoute("gaming")}>Gaming</li>
-            <li onClick={() => handleRoute("phones")}>Phones</li>
-            <li onClick={() => handleRoute("computing")}>Computing</li>
-            <li onClick={() => handleRoute("media")}>Media</li>
+            <li
+              className="hover:cursor-pointer"
+              onClick={() => handleRoute("games")}
+            >
+              Games
+            </li>
+            <li
+              className="hover:cursor-pointer"
+              onClick={() => handleRoute("phones")}
+            >
+              Phones
+            </li>
+            <li
+              className="hover:cursor-pointer"
+              onClick={() => handleRoute("computing")}
+            >
+              Computing
+            </li>
+            <li
+              className="hover:cursor-pointer"
+              onClick={() => handleRoute("media")}
+            >
+              Media
+            </li>
           </ul>
         </div>
 

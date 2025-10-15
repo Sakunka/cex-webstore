@@ -13,7 +13,6 @@ export default function Footer() {
         <div>
           <ul className="flex flex-col gap-2">
             <li className="font-bold">About us</li>
-            <li>Sell an Item</li>
             <li>Careers</li>
             <li>Franchising</li>
             <li>CeX Blog</li>
@@ -53,52 +52,42 @@ export default function Footer() {
           </li>
         </ul>
       </div>
-      <div className="flex flex-col *:border-t-sky-200 py-8 gap-3">
+      <div className="flex flex-col *:border-t-sky-200 my-14 gap-3">
         <p className="flex justify-center">Payment doable with: </p>
         <div className="flex flex-row gap-3 justify-center">
           <Image
             width={48}
             height={60}
-            src="https://uk.webuy.com/footer-payment-logos/apple-pay.svg"
+            src="/footer/apple-pay.svg"
             alt="apple"
           />
+          <Image width={48} height={60} src="/footer/amex.svg" alt="amex" />
+          <Image width={48} height={60} src="/footer/visa.svg" alt="visa" />
           <Image
             width={48}
             height={60}
-            src="https://uk.webuy.com/footer-payment-logos/amex.svg"
-            alt="amex"
-          />
-          <Image
-            width={48}
-            height={60}
-            src="https://uk.webuy.com/footer-payment-logos/visa.svg"
-            alt="visa"
-          />
-          <Image
-            width={48}
-            height={60}
-            src="https://uk.webuy.com/footer-payment-logos/mastercard.svg"
+            src="/footer/mastercard.svg"
             alt="mastercard"
           />
         </div>
       </div>
-      <div className="flex justify-center items-center flex-col gap-4 mb-10 border-t-amber-300">
+      <div className="flex justify-center items-center flex-col gap-4 my-10 border-t-amber-300">
         <p>
           © All site contents copyright 1999-2025, CeX Ltd. All trademarks
           acknowledged. E&OE.
         </p>
         <div className="flex flex-row gap-3">
           <Image
-            width={48}
-            height={60}
+            width={148}
+            height={140}
             alt="apple"
-            src="https://uk.webuy.com/Image/mobile-app-buttons/apple-store.svg"
+            src="/footer/apple-store.svg"
           />
           <Image
-            width={48}
-            height={60}
+            width={148}
+            height={140}
             alt="google-play"
-            src="https://uk.webuy.com/Image/mobile-app-buttons/google-play.svg"
+            src="/footer/google-play.svg"
           />
         </div>
       </div>

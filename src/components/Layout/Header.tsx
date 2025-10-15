@@ -9,11 +9,14 @@ import { useSelector } from "react-redux";
 import type { RootState } from "@/lib/store";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import { useSearch } from "../../components/SearchBar/useSearch";
-import Modal from "../ui/Modal";
 import { useRouter } from "next/navigation";
-import SideMenu from "./SideMenu";
-import AccountDropdown from "./AccountDropdown";
 import NavSelection from "./NavSelection";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+
+const SideMenu = dynamic(() => import("./SideMenu"));
+const AccountDropdown = dynamic(() => import("./AccountDropdown"));
+const Modal = dynamic(() => import("../ui/Modal"));
 
 export default function Header() {
   const { searchTerm, setSearchTerm, results } = useSearch();
@@ -72,9 +75,10 @@ export default function Header() {
           <span className="text-xs md:text-base">Menu</span>
         </div>
 
-        <img
+        <Image
           src="/images/logo.svg"
-          width="70px"
+          width={70}
+          height={70}
           alt="Logo"
           className="w-12 md:w-16"
         />

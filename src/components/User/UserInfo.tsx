@@ -1,11 +1,13 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { RootState } from "@/lib/store";
-import EditShippingInfo from "./EditShippingInfo";
-import EditUser from "./EditUser";
 import UserInfoSkeleton from "./UserSkeletonInfo";
-import EditPassword from "./EditPassword";
-import CancelAccount from "./CancelAccount";
+import dynamic from "next/dynamic";
+
+const EditShippingInfo = dynamic(() => import("./EditShippingInfo"));
+const EditUser = dynamic(() => import("./EditUser"));
+const EditPassword = dynamic(() => import("./EditPassword"));
+const CancelAccount = dynamic(() => import("./CancelAccount"));
 
 export default function UserInfo() {
   const { user, loadingAuth } = useSelector((state: RootState) => state.auth);

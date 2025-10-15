@@ -68,17 +68,13 @@ export const loginUser = createAsyncThunk(
 
       const contentType = response.headers.get("content-type");
       if (!contentType || !contentType.includes("application/json")) {
-        const htmlText = await response.text();
-        return thunkAPI.rejectWithValue("Server returned HTML instead of JSON");
+        return thunkAPI.rejectWithValue("JSON required");
       }
 
       const data = await response.json();
 
       if (!response.ok) {
-        const errorMessage =
-          data.message ||
-          data.error ||
-          `HTTP error! status: ${response.status}`;
+        const errorMessage = `Error, status: ${response.status}`;
         return thunkAPI.rejectWithValue(errorMessage);
       }
 
@@ -91,7 +87,7 @@ export const loginUser = createAsyncThunk(
         _id: data.user._id,
       };
     } catch (error: any) {
-      return thunkAPI.rejectWithValue(error.message || "Network error");
+      return thunkAPI.rejectWithValue(error.message || "Error");
     }
   }
 );

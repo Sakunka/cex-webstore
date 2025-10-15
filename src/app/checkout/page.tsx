@@ -5,13 +5,15 @@ import { useSelector } from "react-redux";
 import { BsArrowDown, BsArrowUp } from "react-icons/bs";
 import { useState } from "react";
 import { AnimatePresence } from "motion/react";
-import Items from "@/components/Checkout/Items";
-import Form from "@/components/Checkout/Form";
 import OrderSummary from "@/components/Checkout/OrderSummary";
 import { fields } from "@/constants/fields";
 import { useRouter } from "next/navigation";
 import { sendOrder } from "@/lib/api/sendOrder";
 import { RootState } from "@/lib/store";
+import dynamic from "next/dynamic";
+
+const Form = dynamic(() => import("@/components/Checkout/Form"));
+const Items = dynamic(() => import("@/components/Checkout/Items"));
 
 export default function Checkout() {
   const basket = useSelector((state: RootState) => state.checkout);

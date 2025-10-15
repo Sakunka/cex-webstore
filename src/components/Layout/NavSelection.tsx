@@ -37,7 +37,7 @@ export default function NavSelection() {
 
   return (
     <nav className="relative">
-      <ul className="flex flex-row mx-auto justify-center gap-8 pb-3 text-white font-bold text-[14px] relative">
+      <ul className="flex flex-row mx-auto justify-center gap-8 pb-3 text-white font-bold text-[14px]">
         {navItems.map((item, index) => (
           <li
             key={index}
@@ -55,15 +55,15 @@ export default function NavSelection() {
             {item.label}
           </li>
         ))}
-
-        <div
-          className="absolute bottom-0 h-0.5 bg-white transition-all duration-300 ease-out"
-          style={{
-            width: underlineStyle.width,
-            left: underlineStyle.left,
-          }}
-        />
       </ul>
+
+      <div
+        className="absolute bottom-0 h-0.5 bg-white transition-all duration-300 ease-out"
+        style={{
+          width: underlineStyle.width,
+          left: underlineStyle.left,
+        }}
+      />
     </nav>
   );
 }

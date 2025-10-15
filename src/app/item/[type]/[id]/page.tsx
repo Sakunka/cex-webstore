@@ -5,12 +5,16 @@ import { FaArrowDown } from "react-icons/fa";
 import { FaArrowUp } from "react-icons/fa";
 import DetailsUp from "@/components/Item/DetailsUp";
 import DetailsDown from "@/components/Item/DetailsDown";
-import Specifications from "@/components/Item/Specifications";
 import useGetItem from "@/hooks/useGetItem";
 import { useParams } from "next/navigation";
 import Image from "@/components/Item/Image";
 import SkeletonItem from "@/components/Item/SkeletonItem";
 import { AnimatePresence } from "motion/react";
+import dynamic from "next/dynamic";
+
+const Specifications = dynamic(
+  () => import("@/components/Item/Specifications")
+);
 
 export default function ItemPage() {
   const { id, type } = useParams();

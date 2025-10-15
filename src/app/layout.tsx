@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     siteName: "CEX Webstore",
     images: [
       {
-        url: "/metatags/Logo/png",
+        url: "/metatags/Logo.png",
         width: 1200,
         height: 630,
         alt: "CEX Webstore - Games, Phones & Computing",
@@ -75,10 +75,7 @@ export const metadata: Metadata = {
     title: "CEX Webstore - Buy & Sell Games, Phones & Computing",
     description:
       "Shop the latest games, smartphones, and computing equipment at unbeatable prices.",
-    images: ["/metatags/Logo/png"],
-  },
-  verification: {
-    google: "your-google-verification-code",
+    images: ["/metatags/Logo.png"],
   },
   category: "E-commerce",
 };
