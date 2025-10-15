@@ -38,7 +38,6 @@ export const metadata: Metadata = {
   authors: [{ name: "CEX Webstore" }],
   creator: "CEX Webstore",
   publisher: "CEX Webstore",
-  colorScheme: "light only",
   formatDetection: {
     email: false,
     address: false,

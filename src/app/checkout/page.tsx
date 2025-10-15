@@ -74,49 +74,64 @@ export default function Checkout() {
   );
 
   return (
-    <div className="flex flex-row mt-10 mb-10">
-      <div className="flex flex-col gap-10 pb-10 w-3/5">
-        <div className="max-w-4xl p-6 bg-white rounded-lg shadow-md">
+    <div className="flex flex-col lg:flex-row gap-6 mt-4 md:mt-10 mb-10 px-4 md:px-6 lg:px-8">
+      <div className="flex flex-col gap-4 md:gap-6 lg:gap-10 pb-10 w-full lg:w-3/5">
+        <div className="w-full p-4 md:p-6 bg-white rounded-lg shadow-md">
           <div
             onClick={() => setDel((prev) => !prev)}
-            className="flex flex-row justify-between"
+            className="flex flex-row justify-between items-center cursor-pointer hover:opacity-80 transition-opacity"
           >
-            <h1 className="text-2xl font-semibold mb-6 text-gray-800">
+            <h1 className="text-lg md:text-xl lg:text-2xl font-semibold text-gray-800">
               1. Delivery
             </h1>
-            {del ? <BsArrowUp /> : <BsArrowDown />}
+            <div className="text-gray-600">
+              {del ? <BsArrowUp size={20} /> : <BsArrowDown size={20} />}
+            </div>
           </div>
           <AnimatePresence>
-            {del ? <Items items={items} /> : null}
+            {del ? (
+              <div className="mt-4 md:mt-6">
+                <Items items={items} />
+              </div>
+            ) : null}
           </AnimatePresence>
         </div>
-        <div className="max-w-4xl p-6 bg-white rounded-lg shadow-md">
+
+        <div className="w-full p-4 md:p-6 bg-white rounded-lg shadow-md">
           <div
             onClick={() => setInfo((prev) => !prev)}
-            className="flex flex-row justify-between"
+            className="flex flex-row justify-between items-center cursor-pointer hover:opacity-80 transition-opacity"
           >
-            <h3 className="text-2xl font-semibold mb-6 text-gray-800">
-              2. Complete your information below
+            <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-gray-800">
+              2. Complete your information
             </h3>
-            {info ? <BsArrowUp /> : <BsArrowDown />}
+            <div className="text-gray-600 flex-shrink-0 ml-2">
+              {info ? <BsArrowUp size={20} /> : <BsArrowDown size={20} />}
+            </div>
           </div>
 
           <AnimatePresence>
             {info ? (
-              <form id="checkout-form" className="space-y-4">
+              <form
+                id="checkout-form"
+                className="space-y-3 md:space-y-4 mt-4 md:mt-6"
+              >
                 <Form register={register} />
               </form>
             ) : null}
           </AnimatePresence>
         </div>
       </div>
-      <OrderSummary
-        items={items}
-        total={total}
-        handleCheckout={handleCheckout}
-        allRequiredFieldsFilled={allRequiredFieldsFilled}
-        handleSubmit={handleSubmit}
-      />
+
+      <div className="w-full lg:w-2/5 lg:sticky lg:top-4 lg:self-start">
+        <OrderSummary
+          items={items}
+          total={total}
+          handleCheckout={handleCheckout}
+          allRequiredFieldsFilled={allRequiredFieldsFilled}
+          handleSubmit={handleSubmit}
+        />
+      </div>
     </div>
   );
 }

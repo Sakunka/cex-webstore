@@ -72,11 +72,11 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex justify-center items-center flex-col gap-4 my-10 border-t-amber-300">
-        <p>
+        <p className="px-10">
           © All site contents copyright 1999-2025, CeX Ltd. All trademarks
           acknowledged. E&OE.
         </p>
-        <div className="flex flex-row gap-3">
+        <div className="flex flex-row gap-3 mb-5">
           <Image
             width={148}
             height={140}

@@ -12,9 +12,8 @@ export async function GET(
   try {
     await connectDB();
 
-    const { name } = params;
+    const { name } = await params;
 
-    // Validacija search term-a
     if (!name || name.trim() === "") {
       return NextResponse.json(
         { message: "Search term is required" },

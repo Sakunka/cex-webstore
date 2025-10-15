@@ -3,7 +3,7 @@ import SearchList from "./SearchList";
 
 export default function SearchBar({ searchTerm, setSearchTerm, results }) {
   return (
-    <>
+    <div className="relative w-full">
       <form>
         <input
           className={`bg-white pl-10 w-full h-11 text-black ${
@@ -16,10 +16,10 @@ export default function SearchBar({ searchTerm, setSearchTerm, results }) {
         />
         <FaSearch
           color="black"
-          className="absolute left-8 top-25 md:left-3 md:top-3 pointer-events-none"
+          className="absolute left-4 top-4 md:left-4 md:top-4 pointer-events-none"
         />
       </form>
       {searchTerm.length > 3 ? <SearchList results={results} /> : null}
-    </>
+    </div>
   );
 }
