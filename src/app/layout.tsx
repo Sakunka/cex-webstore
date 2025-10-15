@@ -91,6 +91,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="color-scheme" content="light" />
+        <meta name="theme-color" content="#ffffff" />
+      </head>
       <body>
         <Providers>
           <div className="flex flex-col max-w-[1580px] mx-auto">

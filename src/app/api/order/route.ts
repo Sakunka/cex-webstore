@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import Order from "@/lib/models/Order";
 import { authenticate } from "@/lib/auth/middleware";
+import changeCount from "@/lib/api/changeCount";
+import emptyBasket from "@/lib/api/emptyBasket";
 
 export async function GET(request: NextRequest) {
   try {
@@ -37,6 +39,8 @@ export async function POST(request: NextRequest) {
     const user = await authenticate(request);
     const { data, basketItems } = await request.json();
 
+    console.log("PODACI IZ KORPE", basketItems);
+
     if (!data || !basketItems || basketItems.length === 0) {
       return NextResponse.json(
         { message: "Missing required order data" },
@@ -52,6 +56,7 @@ export async function POST(request: NextRequest) {
       "town_city",
       "postcode",
     ];
+
     for (const field of requiredFields) {
       if (!data[field] || data[field].trim() === "") {
         return NextResponse.json(
@@ -65,7 +70,7 @@ export async function POST(request: NextRequest) {
     const processedItems = [];
 
     for (const item of basketItems) {
-      if (!item.price || !item.name || !item.type) {
+      if (!item.price || !item.type) {
         return NextResponse.json(
           { message: "Invalid item data" },
           { status: 400 }
@@ -84,10 +89,11 @@ export async function POST(request: NextRequest) {
         image: item.image || "",
         quantity: quantity,
         price: itemPrice,
+        id: item.id,
       });
     }
 
-    const deliveryFee = 29.5;
+    const deliveryFee = 7.5;
     const total = subtotal + deliveryFee;
 
     const orderData = {
@@ -111,22 +117,16 @@ export async function POST(request: NextRequest) {
       status: "PENDING",
     };
 
-    const newOrder = await Order.create(orderData);
-
-    const estimatedDelivery = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+    await Order.create(orderData);
+    //Smanji se broj kvantiteta za svaki narucen item
+    await changeCount(processedItems);
+    //Isprazni se prethodna korpa
+    await emptyBasket(user._id);
 
     return NextResponse.json(
       {
         success: true,
         message: "Order created successfully",
-        order: {
-          id: newOrder._id,
-          orderNumber: newOrder.orderNumber,
-          status: newOrder.status,
-          total: newOrder.pricing.total,
-          estimatedDelivery: estimatedDelivery,
-          createdAt: newOrder.createdAt,
-        },
       },
       { status: 201 }
     );

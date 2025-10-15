@@ -49,11 +49,11 @@ export async function GET(request) {
         let item = null;
 
         try {
-          if (fav.itemType === "game") {
+          if (fav.itemType === "Game") {
             item = await mongoose.model("Game").findById(fav.itemId).lean();
-          } else if (fav.itemType === "phone") {
+          } else if (fav.itemType === "Phone") {
             item = await mongoose.model("Phone").findById(fav.itemId).lean();
-          } else if (fav.itemType === "computing") {
+          } else if (fav.itemType === "Computing") {
             item = await mongoose
               .model("Computing")
               .findById(fav.itemId)

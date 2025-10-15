@@ -5,56 +5,11 @@ import { useRouter } from "next/navigation";
 import useFavourites from "@/hooks/useFavourites";
 import Loader from "../ui/Loader";
 
-type Game = {
-  _id: Types.ObjectId;
-  name: string;
-  price: number;
-  year: number;
-  genre: string;
-  publisher: string;
-  pegi_rating: string;
-  description: string;
-  image: string;
-};
-
-type Computing = {
-  _id: Types.ObjectId;
-  type: string;
-  ram: number;
-  cpu: string;
-  screen_size: string;
-  storage: string;
-  manufacturer: string;
-  gpu: string;
-  os: string;
-  price: number;
-  image: string;
-};
-
-type Phone = {
-  _id: Types.ObjectId;
-  name: string;
-  price: number;
-  OS: string;
-  manufacturer: string;
-  network: string;
-  color: string;
-  image: string;
-};
-
-type FavouriteItem = Game | Computing | Phone;
-
-type Favourite = {
-  _id: Types.ObjectId;
-  user: string;
-  itemId: Types.ObjectId;
-  itemType: "game" | "computing" | "phone";
-  item?: FavouriteItem;
-};
-
 export default function FavouriteTab() {
   const router = useRouter();
   const { items, loading, error, deleteFavourite } = useFavourites();
+
+  console.log(items);
 
   async function handleDeleteFavourite(e: React.MouseEvent, id: string) {
     e.stopPropagation();
@@ -74,14 +29,14 @@ export default function FavouriteTab() {
       {items.length === 0 ? (
         <p className="text-center py-8 text-gray-600">No favourites found.</p>
       ) : (
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {items.map((item) => (
             <div
               key={item._id.toString()}
               onClick={() =>
                 router.push(`/item/${item.itemType}/${item.itemId}`)
               }
-              className="mb-10 flex flex-col justify-between relative p-6 w-62 h-94 bg-gray-50 rounded-3xl hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out group cursor-pointer"
+              className="mb-10 flex flex-col mx-auto justify-between relative p-6 w-62 h-94 bg-gray-50 rounded-3xl hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out group cursor-pointer"
             >
               <div
                 onClick={(e) => {

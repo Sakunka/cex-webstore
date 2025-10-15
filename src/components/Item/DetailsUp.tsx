@@ -3,9 +3,9 @@ import { addFavourite } from "@/lib/api/addFavourite";
 export default function DetailsUp({ item }) {
   return (
     <>
-      <h2 className="text-3xl md:text-4xl font-bold">{item?.name}</h2>
+      <h2 className="text-2xl md:text-4xl font-bold">{item?.name}</h2>
       <div className="flex items-center justify-between">
-        <p className="text-3xl md:text-4xl font-bold">
+        <p className="text-2xl md:text-4xl font-bold">
           £{item?.price.toFixed(2)}
         </p>
         <button

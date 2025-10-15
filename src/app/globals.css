@@ -6,6 +6,14 @@
   color-scheme: light only;
 }
 
+html {
+  color-scheme: light;
+}
+
+* {
+  color-scheme: light;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

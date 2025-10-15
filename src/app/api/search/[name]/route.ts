@@ -61,14 +61,9 @@ export async function GET(
       }
     });
 
-    const totalResults = results.reduce((sum, result) => {
-      return sum + (result.success ? result.count : 0);
-    }, 0);
-
     return NextResponse.json({
       message: "Search completed",
       searchTerm: searchTerm,
-      totalResults,
       results: results,
     });
   } catch (error) {

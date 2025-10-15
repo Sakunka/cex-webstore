@@ -43,7 +43,7 @@ export default function ItemPage() {
       <div className="flex flex-col w-full md:flex-row py-10 md:mx-auto md:max-w-7xl">
         <ItemImage type={type} item={item} />
         <div className="w-full md:w-1/2 flex flex-col gap-6">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 mt-10 md:mt-0">
             <DetailsUp item={item} />
             <DetailsDown id={item._id} count={item?.count} type={item.type} />
           </div>

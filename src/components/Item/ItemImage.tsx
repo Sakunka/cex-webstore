@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function ItemImage({ type, item }) {
   return (
-    <div className="w-1/2 pr-8 flex justify-center">
+    <div className="w-1/2 flex flex-col mx-auto">
       <Image
         src={item.image}
         alt={item.name}

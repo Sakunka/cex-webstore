@@ -25,9 +25,9 @@ export function useSearch() {
 
           const data = await response.json();
           setResults(data);
-        } catch (err) {
-          if (err.name !== "AbortError") {
-            setError(err.message);
+        } catch (error) {
+          if (error.name !== "AbortError") {
+            setError(error.message);
           }
         } finally {
           setLoading(false);
@@ -35,7 +35,7 @@ export function useSearch() {
       } else {
         setResults(null);
       }
-    }, 800);
+    }, 400);
 
     return () => {
       clearTimeout(timeoutId);
